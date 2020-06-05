@@ -1,17 +1,13 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-	userId: {
-		type: String,
-		required: true
-	},
     name: { 
 		type: String,
 		required: true,
-		min: [3, "Invalid name passed"],
+		min: [3, "Invalid lastname passed"],
         validate: {
-            validator: (name)=> {
-                if(name.length > 3) {
+            validator: (lastName)=> {
+                if(lastName.lenght > 3) {
                     return true;
                 } else {
                     return false;
@@ -49,18 +45,20 @@ const userSchema = new mongoose.Schema({
 		required: false 
 	},
     role: { 
-		type: Number, 
-		required: true,
-		default: 1
+		type: String, 
+		required: true 
 	},
 	verified:{
-		type: Boolean,
-		required: false,
-		default: false
+		type:Boolean,
+		required:false
+	},
+	created:{
+		type:Date,
+		required:true
 	},
 	photo:{
-		type: String,
-		required: false
+		type:String,
+		required:false
 	},
 	pancard:{
 		type:String,
@@ -70,6 +68,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required:false
 	},
+	subcategory:[Schema.Types.Mixed],
 	createdOn : {
 		type: Date,
 		default: Date.now(),
