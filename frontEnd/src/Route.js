@@ -28,7 +28,7 @@ export default class Routes extends Component {
                 <Switch>
                     <Route  path="/registerPartner" component={registerPartner} />
                     <Route  path="/:finalsetpsforRegistration" component={FinalRegisterPage} />
-                    >
+                    
                     {/* <Route path="/Products" component={Products} /> */}
                 </Switch>
             </Router>

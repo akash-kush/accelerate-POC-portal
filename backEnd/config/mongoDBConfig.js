@@ -3,7 +3,7 @@
 */
 var mongoose = require("mongoose");
 var chalk = require("chalk");
-const MONGOURL = "mongodb://127.0.0.1/sicarii";
+const MONGOURL = "mongodb://127.0.0.1/poc";
 
 function Connection(){
   mongoose.connect(MONGOURL,{

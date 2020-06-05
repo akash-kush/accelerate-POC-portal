@@ -4,7 +4,7 @@
  * @author Jithin Zacharia
  */
 
-var fs = require('fs'),
+let fs = require('fs'),
     jwt = require('jsonwebtoken'),
     options = require('../config/JWTSecretConfig'),
     blacklistedJWTModel = require('../model/blacklistedTokenModel');

@@ -42,3 +42,5 @@ app.use("*", (req,res)=> {
 });
 
 app.listen(serverPortConfiguration.port,serverPortConfiguration.host,()=> console.log(`%s Sicarii running on ${serverPortConfiguration.port}`, chalk.green('✓')));
+
+module.exports = app;
