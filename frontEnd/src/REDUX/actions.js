@@ -5,7 +5,7 @@ const LoginUser = user => {
     return dispatch => {
       console.log("fetching.....",user);
       axios
-        .post("http://localhost:8080/login",{email:user.email,password:user.password})
+        .post("/api/auth/login",JSON.stringify({email:user.email,password:user.password}))
         .then(res => {
           //console.log("the response data is line 1 ",res);
           if(res.data.status ===500){
@@ -29,16 +29,16 @@ const LoginUser = user => {
 const RegisterUser=User=>{
   return dispatch=>{
     console.log('inside action for registering user',User);
-    const formdata=new FormData();
-    formdata.append('name',User.name);
-    formdata.append('password',User.password);
-    formdata.append('email',User.email);
-    formdata.append('phone_number',User.phone_number);
-    formdata.append('files',User.files);
-    formdata.append('role',User.role);
-    formdata.append('category',User.category);
-    formdata.append('subcategory',User.subcategory);
-    axios.post('http://localhost:8080/users',formdata).then(res=>console.log(res)).catch(err=>console.log(err));
+    console.log(typeof(User))
+    let userData = JSON.stringify({
+      name: User.name,
+      password: User.password,
+      email: User.email,
+      phone_number: User.phone_number,
+      role: User.role,
+
+    })
+    axios.post('/api/auth/register',User).then(res=>console.log(res)).catch(err=>console.log(err));
   }
 }
 

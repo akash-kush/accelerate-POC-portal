@@ -4,6 +4,5 @@ exports.registerUser = [
     check('email').normalizeEmail().isEmail(),
     check('name').exists(),
     check('password').exists(),
-    check('phone_number').exists(),
-    check('pancard').exists()
+    check('phone_number').exists()
 ]

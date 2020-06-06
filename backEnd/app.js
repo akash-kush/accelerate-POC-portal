@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 //Routes
 app.use('/api/auth', auth);
-app.use('/api/user/', user);
+app.use('/api/user', user);
 
 app.use(function(err, req, res, next) {
     console.log(err)
